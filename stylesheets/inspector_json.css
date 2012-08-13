@@ -51,15 +51,22 @@
 	
 	}
 
+.inspector-json li > strong {
+
+	color: rgb( 0, 136, 204 );
+
+	}
+
 .inspector-json li > a:hover {
 	
 	color: rgb( 0, 85, 128 );
 	
 	}
 
-.inspector-json li > a:before {
+.inspector-json li.object > a:before,
+.inspector-json li.array > a:before {
 	
-	content: '▼';
+	content: '\25BC'; /* down pointing triangle */
 	display: inline-block;
 	width: 10px;
 	margin-right: 5px;
@@ -67,14 +74,14 @@
 	
 	}
 
-.inspector-json li > a.collapsed:before {
+.inspector-json li.collapsed > a:before {
 	
-	content: '▶';
+	content: '\25B6'; /* right pointing triangle */
 	
 	}
 
-.inspector-json a.collapsed + ol,
-.inspector-json a.collapsed + ul {
+.inspector-json li.collapsed > ol,
+.inspector-json li.collapsed > ul {
 	
 	display: none;
 	
