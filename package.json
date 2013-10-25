@@ -1,0 +1,31 @@
+{
+  "name": "Inspector-JSON",
+  "version": "0.1.0",
+  "description": "Easily visualize and explore JSON",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SparkartGroupInc/Inspector-JSON.git"
+  },
+  "keywords": [
+    "JSON",
+    "inspector"
+  ],
+  "author": {
+    "name": "Timothy Kempf",
+    "email": "tim@sparkart.com",
+    "url": "http://sparkart.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SparkartGroupInc/Inspector-JSON/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~1.2.4",
+    "tape": "~1.1.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.4"
+  },
+  "dependencies": {}
+}

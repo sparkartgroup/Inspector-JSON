@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>ST Pagination Test Runner</title>
+
+	<style>
+		html {
+			font-family: monospace;
+		}
+		pre {
+			margin: 0;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="log"></div>
+
+	<script>
+		console = console || {};
+		var original_log = console.log;
+		var log_el = document.getElementById('log');
+		console.log = function( msg ){
+			var pre = document.createElement('pre');
+			pre.innerText = msg;
+			log_el.appendChild( pre );
+			original_log.apply( this, arguments );
+		};
+	</script>
+	<script src="./assets/test.js"></script>
+
+</body>
+</html>
