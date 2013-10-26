@@ -2,6 +2,7 @@
   "name": "Inspector-JSON",
   "version": "0.1.0",
   "description": "Easily visualize and explore JSON",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/SparkartGroupInc/Inspector-JSON.git"
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "type-of": "~2.0.0",
-    "extend": "~1.2.1"
+    "extend": "~1.2.1",
+    "dom-delegate": "~0.3.2"
   }
 }
