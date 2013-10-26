@@ -11,24 +11,20 @@
 
 	<!-- Inspector JSON -->
 	<script src="../inspector-json.js"></script>
-	<script>
-
-		$(function(){
-
-			viewer = new InspectorJSON({
-				element: 'json'
-			});
-
-			viewer.view('{"string":"Hello World!","number":5,"boolean":true,"array":["one","two","three"],"object":{"key":"value","key2":"value2"}}');
-
-		});
-
-	</script>
 
 </head>
 <body>
 
 	<div id="json"></div>
+	<script>
+
+		viewer = new InspectorJSON({
+			element: 'json'
+		});
+
+		viewer.view('{"string":"Hello World!","number":5,"boolean":true,"array":["one","two","three"],"object":{"key":"value","key2":"value2"}}');
+
+	</script>
 
 </body>
 </html>
