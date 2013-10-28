@@ -33,5 +33,15 @@
     "extend": "~1.2.1",
     "dom-delegate": "~0.3.2",
     "store": "~1.3.14"
+  },
+  "testling": {
+    "files": "test/index.js",
+    "browsers": [
+      "ie/6..latest",
+      "ff/20..latest",
+      "chrome/25..latest",
+      "safari/4.0..latest",
+      "opera/11.0..latest"
+    ]
   }
 }
