@@ -51,3 +51,19 @@ test( 'Inspector JSON displays JSON for viewing', function( t ){
 	inspector.destroy();
 	$('#test').html('');
 });
+
+test( 'InspectorJSON can start uncollapsed', function( t ){
+	t.plan(2);
+	$('#test').html( TEST_MARKUP[0] );
+	var inspector = new InspectorJSON({
+		element: 'json',
+		collapsed: false
+	});
+	inspector.view( TEST_JSON );
+	var $array = $('#test li[data-path="this.array"]');
+	t.ok( !$array.is('.collapsed'), 'this.array group is not collapsed' );
+	var $object = $('#test li[data-path="this.object"]');
+	t.ok( !$object.is('.collapsed'), 'this.object group is not collapsed' );
+	inspector.destroy();
+	$('#test').html('');
+});
