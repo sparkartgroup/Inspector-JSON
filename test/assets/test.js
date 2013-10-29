@@ -144,8 +144,9 @@ var InspectorJSON = function( params ){
 	};
 
 	// if json is supplied, view it immediately
-	if( params.json ){
-		this.view( params.json );
+	var default_json = params.json || this.el.innerText;
+	if( default_json ){
+		this.view( default_json );
 	}
 	
 };
@@ -16140,14 +16141,20 @@ test( 'InspectorJSON can start uncollapsed', function( t ){
 });
 
 test( 'InspectorJSON automatically renders JSON when provided', function( t ){
-	t.plan(1);
-	$('#test').html( TEST_MARKUP[0] );
+	t.plan(2);
+	$('#test').html( TEST_MARKUP[0] + TEST_MARKUP[1] );
 	var inspector = new InspectorJSON({
 		element: 'json',
 		json: TEST_JSON
 	});
 	t.ok( $('#json').html() === TEST_JSON_MARKUP, 'Draws markup automatically' );
+	$('#json2').text( TEST_JSON );
+	var inspector2 = new InspectorJSON({
+		element: 'json2'
+	});
+	t.ok( $('#json2').html() === TEST_JSON_MARKUP, 'Draws markup automatically from innerText' );
 	inspector.destroy();
+	inspector2.destroy();
 	$('#test').html('');
 });
 },{"../lib/index.js":1,"./assets/jquery.js":36,"tape":25}]},{},[37])
