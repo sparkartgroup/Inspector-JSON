@@ -144,9 +144,18 @@ var InspectorJSON = function( params ){
 	};
 
 	// if json is supplied, view it immediately
-	var default_json = params.json || this.el.innerText || this.el.textContent;
-	if( default_json ){
-		this.view( default_json );
+	if( !params.json ){
+		try {
+			params.json = JSON.parse( this.el.textContent || this.el.innerText );
+		}
+		catch( err ){
+			if( params.debug ){
+				console.log('Inspector JSON: Element contents are not valid JSON');
+			}
+		}
+	}
+	if( params.json ){
+		this.view( params.json );
 	}
 	
 };
