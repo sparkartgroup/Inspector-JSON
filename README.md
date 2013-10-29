@@ -1,8 +1,12 @@
-# Inspector JSON
+[![browser support](https://ci.testling.com/SparkartGroupInc/Inspector-JSON.png)](https://ci.testling.com/SparkartGroupInc/Inspector-JSON)
+
+=====
+
+## Inspector JSON
 
 Explore JSON in style.
 
-[![browser support](https://ci.testling.com/SparkartGroupInc/Inspector-JSON.png)](https://ci.testling.com/SparkartGroupInc/Inspector-JSON)
+![Screenshot](etc/screenshot.png)
 
 Inspector JSON is a javascript library for creating "inspectable" representations of JSON, much like the inspection features in web browsers like Google Chrome, Firefox, and Opera. It allows you to collapse/expand arrays and objects, and can even remember the state of the inspector between pageloads.
 
