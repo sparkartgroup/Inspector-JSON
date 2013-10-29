@@ -59,15 +59,17 @@ var inspector = new InspectorJSON({
 
 Inspector JSON only makes two methods available at the moment:
 
-#### view ( _string_ )
-Views the JSON string passed.
+#### inspector.view( _json_ )
+Views the JSON string/object passed.
 
 ```javascript
 inspector.view('{"string":"Hello World!","number":5,"boolean":true,"array":["one","two","three"],"object":{"key":"value","key2":"value2"}}');
+
+inspector.view({hello:'world'});
 ```
 
-#### destroy ()
-Destroys the viewer.
+#### inspector.destroy()
+Destroys the inspector.
 
 ```javascript
 inspector.destroy();
