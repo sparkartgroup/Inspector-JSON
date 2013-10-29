@@ -16096,11 +16096,12 @@ test( 'Inspector JSON initializes and destroys itself', function( t ){
 test( 'Inspector JSON displays JSON for viewing', function( t ){
 	t.plan(7);
 	$('#test').html( TEST_MARKUP[0] );
+	var expected_markup = '<ul><li class="string" data-path="this.string"><strong>string</strong><span>"Hello World!"</span></li><li class="number" data-path="this.number"><strong>number</strong><var>5</var></li><li class="boolean" data-path="this.boolean"><strong>boolean</strong><em>true</em></li><li class="array collapsed" data-path="this.array"><a href="#toggle"><strong>array</strong></a>Array(3)<ol><li class="string" data-path="this.array[0]"><strong>0</strong><span>"one"</span></li><li class="string" data-path="this.array[1]"><strong>1</strong><span>"two"</span></li><li class="string" data-path="this.array[2]"><strong>2</strong><span>"three"</span></li></ol></li><li class="object collapsed" data-path="this.object"><a href="#toggle"><strong>object</strong></a><ul><li class="string" data-path="this.object.key"><strong>key</strong><span>"value"</span></li><li class="string" data-path="this.object.key2"><strong>key2</strong><span>"value2"</span></li></ul></li></ul>';
 	var inspector = new InspectorJSON({
 		element: 'json'
 	});
 	inspector.view( TEST_JSON );
-	t.ok( $('#test')[0].innerHTML === '<div id="json" class=" inspector-json viewer"><ul><li class="string" data-path="this.string"><strong>string</strong><span>"Hello World!"</span></li><li class="number" data-path="this.number"><strong>number</strong><var>5</var></li><li class="boolean" data-path="this.boolean"><strong>boolean</strong><em>true</em></li><li class="array collapsed" data-path="this.array"><a href="#toggle"><strong>array</strong></a>Array(3)<ol><li class="string" data-path="this.array[0]"><strong>0</strong><span>"one"</span></li><li class="string" data-path="this.array[1]"><strong>1</strong><span>"two"</span></li><li class="string" data-path="this.array[2]"><strong>2</strong><span>"three"</span></li></ol></li><li class="object collapsed" data-path="this.object"><a href="#toggle"><strong>object</strong></a><ul><li class="string" data-path="this.object.key"><strong>key</strong><span>"value"</span></li><li class="string" data-path="this.object.key2"><strong>key2</strong><span>"value2"</span></li></ul></li></ul></div>', 'Draws correct markup' );
+	t.ok( $('#json').html() === expected_markup, 'Draws correct markup' );
 	var $array = $('#test li[data-path="this.array"]');
 	t.ok( $array.is('.collapsed'), 'this.array group is collapsed' );
 	$array.children('a')[0].click();
