@@ -40,7 +40,7 @@ Inspector JSON has a few configuration options, all of which are set in a config
 | **element** | `String` or `Element` | `null` | The element the inspector should be rendered in. This must either be the ID of an element, or the element reference itself. |
 | **json** | `String` or `Object` | `null` | The JSON for the inspector to render. This must either be a valid JSON string, or an object representing valid JSON. |
 | **collapsed** | `Boolean` | `true` | Whether or not the tree will start collapsed |
-| **url** | `String` | `current url` | The URL to be used for remembering the inspector's collapse state. By default this uses the page's current URL |
+| **url** | `String` | `location.pathname` | The URL to be used for remembering the inspector's collapse state. By default this uses the page's current URL |
 
 ```javascript
 var inspector = new InspectorJSON({
