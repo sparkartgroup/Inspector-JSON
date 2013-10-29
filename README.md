@@ -8,43 +8,42 @@ Inspector JSON is a javascript library for creating "inspectable" representation
 
 ### Usage
 
-Inspector JSON presently has the following dependencies:
+> NOTE: You must include `inspector_json.css` for the inspector to be properly styled.
 
-* [jQuery](http://jquery.com/)
-* [underscore.js](http://underscorejs.org/)
-* [store.js](https://github.com/marcuswestin/store.js)
-
-You must also include `inspector_json.css` for the inspector to be properly styled.
-
-The inspector is created by initializing a new InspectorJSON, and the JSON is viewed by passing a JSON string to the `view` method:
+The inspector is started by creating a new `InspectorJSON` instance. If you pass the `json` option, or the `element` provided has a JSON string inside of it, Inspector JSON will automatically render that JSON.
 
 ```javascript
 var inspector = new InspectorJSON({
-	element: '#json'
+    element: 'json',
+    json: '{"hello":"world"}'
 });
-
-inspector.view('{"hello":"world"}');
 ```
 
-You'll need an element for the inspector to be drawn in, too:
+You may also render new JSON at any time by using the `view` method:
 
-```html
-<div id="json"></div>
+```javascript
+inspector.view('{"new":true}');
 ```
+
+Inspector JSON can be used as a standalone script, with [Browserify](https://github.com/substack/node-browserify), or with [RequireJS](http://requirejs.org/).
 
 ### Configuration
 
 Inspector JSON has a few configuration options, all of which are set in a configuration object passed when the inspector is instantiated. The options are as follows:
 
-* **element** ( required ) - A selector for the element which will become the viewer. May also be a jQuery selection. _ex:_ `#json`, `$('#json')`
-* **collapsed** ( default `true` ) - Boolean determining whether the inspector should start with everything collapsed or uncollapsed.
-* **url** ( default _current url_ ) - The url to be used for remembering the state of the inspector. Usually does not need to be set.
+| Option | Type | Default | Purpose |
+| ----- | ----- | ----- | ----- |
+| **element** | `String` or `Element` | `null` | The element the inspector should be rendered in. This must either be the ID of an element, or the element reference itself. |
+| **json** | `String` or `Object` | `null` | The JSON for the inspector to render. This must either be a valid JSON string, or an object representing valid JSON. |
+| **collapsed** | `Boolean` | `true` | Whether or not the tree will start collapsed |
+| **url** | `String` | `current url` | The URL to be used for remembering the inspector's collapse state. By default this uses the page's current URL |
 
 ```javascript
 var inspector = new InspectorJSON({
-	element: '#AwesomeElement',
-	collapsed: false,
-	url: '/very/custom/url'
+    element: 'json',
+    json: '{"hello":"world"}',
+    collapsed: false,
+    url: '/json/inspector/'
 });
 ```
 
