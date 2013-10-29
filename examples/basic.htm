@@ -3,24 +3,19 @@
 <head>
 
 	<title>Basic Inspector JSON Example</title>
-
 	<link rel="stylesheet" href="../inspector-json.css" />
-
-	<!-- Inspector JSON -->
 	<script src="../inspector-json.js"></script>
 
 </head>
 <body>
 
+	<div>This example displays a new Inspector JSON instance with a set JSON string</div>
 	<div id="json"></div>
 	<script>
-
 		viewer = new InspectorJSON({
-			element: 'json'
+			element: 'json',
+			json: '{"string":"Hello World!","number":5,"boolean":true,"array":["one","two","three"],"object":{"key":"value","key2":"value2"}}'
 		});
-
-		viewer.view('{"string":"Hello World!","number":5,"boolean":true,"array":["one","two","three"],"object":{"key":"value","key2":"value2"}}');
-
 	</script>
 
 </body>
