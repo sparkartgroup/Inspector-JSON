@@ -144,7 +144,7 @@ var InspectorJSON = function( params ){
 	};
 
 	// if json is supplied, view it immediately
-	var default_json = params.json || this.el.innerText;
+	var default_json = params.json || this.el.innerText || this.el.textContent;
 	if( default_json ){
 		this.view( default_json );
 	}
