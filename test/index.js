@@ -1,3 +1,4 @@
+require('./assets/json2.js');
 var $ = require('./assets/jquery.js');
 var InspectorJSON = require('../lib/index.js');
 var test = require('tape');
