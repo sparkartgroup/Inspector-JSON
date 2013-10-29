@@ -1,7 +1,5 @@
 [![browser support](https://ci.testling.com/SparkartGroupInc/Inspector-JSON.png)](https://ci.testling.com/SparkartGroupInc/Inspector-JSON)
 
-=====
-
 ## Inspector JSON
 
 Explore JSON in style.
