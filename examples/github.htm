@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>GitHub API Inspector JSON Example</title>
+	<link rel="stylesheet" href="../inspector-json.css" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="../inspector-json.js"></script>
+	<script>
+		$(function(){
+			var inspector = new InspectorJSON({
+				element: 'json'
+			});
+			$.getJSON( 'https://api.github.com/repos/SparkartGroupInc/Inspector-JSON/issues?state=open,closed&callback=?', function( data ){
+				inspector.view( data );
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+	<code><strong>https://api.github.com/repos/SparkartGroupInc/Inspector-JSON/issues?state=open,closed</strong></code>
+	<div id="json"></div>
+
+</body>
+</html>
