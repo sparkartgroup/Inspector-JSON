@@ -6,6 +6,8 @@ Explore JSON in style.
 
 Inspector JSON is a javascript library for creating "inspectable" representations of JSON, much like the inspection features in web browsers like Google Chrome, Firefox, and Opera. It allows you to collapse/expand arrays and objects, and can even remember the state of the inspector between pageloads.
 
+=====
+
 ### Usage
 
 > NOTE: You must include `inspector_json.css` for the inspector to be properly styled.
@@ -27,6 +29,8 @@ inspector.view('{"new":true}');
 
 Inspector JSON can be used as a standalone script, with [Browserify](https://github.com/substack/node-browserify), or with [RequireJS](http://requirejs.org/).
 
+=====
+
 ### Configuration
 
 Inspector JSON has a few configuration options, all of which are set in a configuration object passed when the inspector is instantiated. The options are as follows:
@@ -47,6 +51,8 @@ var inspector = new InspectorJSON({
 });
 ```
 
+=====
+
 ### Methods
 
 Inspector JSON only makes two methods available at the moment:
@@ -64,6 +70,8 @@ Destroys the viewer.
 ```javascript
 inspector.destroy();
 ```
+
+=====
 
 ### License
 
